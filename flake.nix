@@ -38,7 +38,7 @@
 
       openconnect-pkgs = import ./nix {
         inherit pkgs poetry2nix;
-        sources = null; # make sure we don't mix flakes and Niv
+        sources = null;
       };
     in
     {

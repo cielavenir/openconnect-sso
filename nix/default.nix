@@ -15,7 +15,6 @@ let
       git
       gnumake
       which
-      niv # Dependency manager for Nix expressions
       nixpkgs-fmt # To format Nix source files
       poetry # Dependency manager for Python
     ] ++ (
@@ -39,8 +38,6 @@ let
       echo "Run 'make help' for available commands"
     '';
   };
-
-  niv = if pkgs ? niv then pkgs.niv else pkgs.haskellPackages.niv;
 
   qtwrapper = pkgs.stdenv.mkDerivation {
     name = "qtwrapper";
