@@ -1,7 +1,7 @@
 import attr
 import structlog
 from lxml import etree, objectify
-
+from pathlib import Path
 from openconnect_sso.saml_authenticator import authenticate_in_browser
 from openconnect_sso.ssl import requests, ssl_verification
 
@@ -50,8 +50,8 @@ class Authenticator:
         sso_token = await self._authenticate_in_browser(
             auth_request_response, display_mode
         )
-
-        self._complete_csd(auth_request_response)
+        if self._scan_file and Path(self._scan_file).is_file():
+            self._complete_csd(auth_request_response)
 
         response = self._complete_authentication(auth_request_response, sso_token)
         if not isinstance(response, AuthCompleteResponse):
