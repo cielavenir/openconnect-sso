@@ -32,10 +32,15 @@ requests = "^2.22"
 structlog = ">=20.1"
 toml = "^0.10"
 setuptools = ">40.0"
+#PyQt6 = "^6.3.0"
+#PyQt6-WebEngine = "^6.3.0"
+
+PyQt5 = { version = "^5.12", optional = true }
+PyQtWebEngine = { version ="^5.12", optional = true }
 PySocks = "^1.7.1"
-PyQt6 = "^6.3.0"
-PyQt6-WebEngine = "^6.3.0"
-pyotp = "^2.7.0"
+
+[tool.poetry.extras]
+full = [ "PyQt5", "PyQtWebEngine" ]
 
 [tool.poetry.dev-dependencies]
 coverage_enable_subprocess = "^1.0"
