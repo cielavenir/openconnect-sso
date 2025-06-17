@@ -38,6 +38,7 @@ setuptools = ">40.0"
 PyQt5 = { version = "^5.12", optional = true }
 PyQtWebEngine = { version ="^5.12", optional = true }
 PySocks = "^1.7.1"
+pyotp = "^2.7.0"
 
 [tool.poetry.extras]
 full = [ "PyQt5", "PyQtWebEngine" ]
